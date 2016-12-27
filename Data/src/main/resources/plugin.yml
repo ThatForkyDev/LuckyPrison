@@ -1,0 +1,42 @@
+########     ###    ########    ###
+##     ##   ## ##      ##      ## ##
+##     ##  ##   ##     ##     ##   ##
+##     ## ##     ##    ##    ##     ##
+##     ## #########    ##    #########
+##     ## ##     ##    ##    ##     ##
+########  ##     ##    ##    ##     ##
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+commands:
+  savedata:
+    usage: /<command>
+    description: Writes the [lazy] data to the disk
+    permission: data.save
+  delete:
+    usage: /<command> <player> <path>
+    description: Deletes the data of a player at the path specified
+    permission: data.delete
+
+permissions:
+  data.all:
+    default: op
+    description: Allows full access to the Data plugin
+    children:
+      data.save: true
+  data.save:
+    description: Allows saving [lazy] data to the disk
+    default: false
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

@@ -1,0 +1,235 @@
+########
+##     ##
+##     ##
+########
+##
+##
+##
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+commands:
+  minebuddy:
+    usage: /<command> accept|decline|invite|leave|info
+    description: Blocks you mine go into your buddy's inventory.
+    aliases: [mb]
+  mine:
+    usage: /<command>
+    description: Visit your current mine.
+  enchants:
+    usage: /<command>
+    aliases: [enchantments]
+    description: View the custom enchantments.
+  rankup:
+    usage: /<command>
+    description: Move through the ranks.
+  backpack:
+    usage: /<command> [page]
+    description: Open your backpack.
+    permission: prison.backpack.use
+  profile:
+    usage: /<command> [player]
+    description: View your profile.
+  bonus:
+    usage: /<command> [player] [bonus]
+    description: View your sell-bonus
+  givekey:
+    usage: /<command> <player> <crate> [amount]
+    description: Give crates to a player.
+    permission: prison.givekey
+  keys:
+    usage: /<command> [player]
+    description: View your keys
+  resourcepack:
+    usage: /<command> [player]
+    description: Send the resourcepack.
+    aliases: [rpack, texturepack]
+  pickup:
+    usage: /<command> [value]
+    description: Toggle item pickup.
+  perks:
+    usage: /<command>
+    description: View the perks you get with your rank
+  ranks:
+    usage: /<command>
+    description: View all the ranks
+  alias:
+    usage: /<command> <alias> [command]
+    description: Create a command alias
+    aliases: [aliases]
+    permission: prison.alias
+  nightvision:
+    usage: /<command>
+    description: Infinite nightvision effect!
+    aliases: [nv]
+    permission: prison.nightvision
+  craft:
+    usage: /<command>
+    description: Portable workbench
+    aliases: [wb, workbench]
+    permission: prison.craft
+  stack:
+    usage: /<command>
+    description: Stack your blocks
+    permission: prison.stack
+  staff:
+    usage: /<command>
+    description: Get the online staff
+  giveplots:
+    usage: /<command> <player> <amount>
+    description: Give extra plots to a player
+    permission: prison.giveplots
+  giveplotmerges:
+    usage: /<command> <player> <amount>
+    description: Give extra plot merges to a player
+    permission: prison.giveplots
+  pexr:
+    usage: /<command> <player> <current rank> <new rank>
+    description: PermissionsEx replace group command
+    permission: prison.pexr
+  pexfix:
+    usage: /<command> <player>
+    description: Enforces that a user has a hard-set A rank if they have the A rank
+    permission: prison.pexfix
+  pexrel:
+    usage: /<command>
+    description: Reloads Bukkit's permissions.yml
+    permission: prison.pexrel
+  clearlag:
+    usage: /<command>
+    description: Executes a clearlag
+    permission: prison.clearlag
+  nextclear:
+    usage: /<command>
+    description: Checks when the next clearlag will be
+    aliases: [nclear, nextclag, nextclearlag]
+  enablecrafting:
+    usage: /<command> <item>
+    description: Enables crafting of an item
+    permission: prison.crafting.enable
+  cratecast:
+    usage: /<command> <message>
+    description: Broadcasts a crate message
+    permission: prison.cratecast
+  disablecrafting:
+    usage: /<command> <item>
+    description: Disables crafting of an item
+    permission: prison.crafting.disable
+  explosions:
+    usage: /<command>
+    description: Toggles the explosion sound
+  sellhand:
+    usage: /<command>
+    description: Sell a sellable item in your hand
+    permission: prison.sell.hand
+  dailyrecord:
+    usage: /<command>
+    description: View the daily player record
+  achievements:
+    usage: /<command>
+    description: View your achievements
+    aliases: [goals]
+  marriage:
+    usage: /<command>
+    description: View your marriage
+  propose:
+    usage: /<command> <player>
+    description: Propose to another player
+  divorce:
+    usage: /<command>
+    description: Divorce yourself
+  marry:
+    usage: /<command> [player]
+    description: Accept a marriage proposal!
+  spawner:
+    usage: /<command> <mob>
+    description: Change a mob spawner
+    permission: prison.spawner
+  superpickaxe:
+    usage: /<command>
+    description: Toggle superpickaxe
+    permission: prison.spa
+    aliases: [spa]
+  givecoupon:
+    usage: /<command> <player> <amount>
+    description: Grant a buycraft coupon
+    permission: prison.givecoupon
+  coupons:
+    usage: /<command>
+    description: List your coupons
+  markread:
+    usage: /<command>
+  nameplate:
+    usage: /<command>
+    description: Change your nameplate color
+
+permissions:
+  prison.all:
+    default: op
+    description: Grants full access to the Prison plugin
+    children:
+      prison.alias.all: true
+      prison.backpack.all: true
+      prison.givekey: true
+      prison.sellechest: true
+      prison.sendpack: true
+      prison.joinparticle: true
+      prison.superblock: true
+      prison.nightvision: true
+      prison.craft: true
+      prison.giveplots: true
+      prison.pexr: true
+      prison.pexfix: true
+  prison.backpack:
+    default: false
+  prison.backpack.multiple:
+    default: false
+  prison.givekey:
+    default: false
+  prison.sellechest:
+    default: false
+  prison.sendpack:
+    default: false
+  prison.joinparticle:
+    default: false
+  prison.superblock:
+    default: false
+  prison.nightvision:
+    default: false
+  prison.craft:
+    default: false
+  prison.giveplots:
+    default: false
+  prison.pexr:
+    default: false
+  prison.pexfix:
+    default: false
+  prison.sell.hand:
+    default: false
+  prison.expsave:
+    default: false
+
+  prison.alias.all:
+    default: op
+    children:
+      prison.alias: true
+      prison.alias.unlimited: true
+
+  prison.backpack.all:
+    default: op
+    children:
+      prison.backpack: true
+      prison.backpack.multiple: true
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

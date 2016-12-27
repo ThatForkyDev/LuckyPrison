@@ -1,0 +1,32 @@
+   ###     ######  ########
+  ## ##   ##    ##    ##
+ ##   ##  ##          ##
+##     ## ##          ##
+######### ##          ##
+##     ## ##    ##    ##
+##     ##  ######     ##
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+permissions:
+  actions.all:
+    default: op
+    description: Grants full access to the Actions plugin
+    children:
+      actions.log: true
+  actions.log:
+    default: false
+    description: Enables logging
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

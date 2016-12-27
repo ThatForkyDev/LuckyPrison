@@ -1,0 +1,104 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>lib</artifactId>
+    <description>Library plugin</description>
+    <name>Lib</name>
+
+    <parent>
+        <groupId>com.ulfric</groupId>
+        <artifactId>lucky</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <!--The repo for PEX doesn't have a valid SSL cert so we need to use the version
+        from our repo.  The version from our repo has the pom.xml stripped out of it so that
+        it doesn't drag its dependencies in and utilize their repo. Not that that really changes anything,
+        but keep that in mind if you have to update the PEX version.-->
+        <dependency>
+            <groupId>ru.tehkode</groupId>
+            <artifactId>PermissionsEx</artifactId>
+            <version>1.23.2-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.lishid</groupId>
+            <artifactId>openinv</artifactId>
+            <version>2.3.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Dependencies listed first get priority for defining classes.
+        Apparently inherited dependencies are tacked onto the back of the list,
+        so paperspigot is handled after EchoPet and worldedit.  EchoPet and worldeidt
+        have a dependency on mainline bukkit, so unless we exclude the transitive dependency
+        we end up building against mainline bukkit. -->
+        <dependency>
+            <groupId>net.techcable</groupId>
+            <artifactId>sonarpet</artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bukkit</groupId>
+                    <artifactId>bukkit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldedit</artifactId>
+            <version>5.6.3</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bukkit</groupId>
+                    <artifactId>bukkit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.19.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.gaul</groupId>
+                <artifactId>modernizer-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <javaVersion>1.8</javaVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

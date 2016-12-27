@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:LuckyPrison/Tag.git
+	branch = master
+	commit = 9d36cdad04d22ec5f1bac05fa19b2d9742e8f447
+	parent = 60221a0cef8389fa916c73cf38edfab292fcab8e
+	cmdver = 0.3.0

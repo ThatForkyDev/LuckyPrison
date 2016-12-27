@@ -1,0 +1,157 @@
+ ######  ##     ##    ###    ########
+##    ## ##     ##   ## ##      ##
+##       ##     ##  ##   ##     ##
+##       ######### ##     ##    ##
+##       ##     ## #########    ##
+##    ## ##     ## ##     ##    ##
+ ######  ##     ## ##     ##    ##
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+commands:
+  chat:
+    usage: /<command>
+    description: Chat configuration
+  nickname:
+    usage: /<command> <nickname>
+    description: Change your nickname.
+    aliases: [nick]
+    permission: chat.nickname
+  realname:
+    usage: /<command> <nickname>
+    description: View the real name of a nicknamed user
+    aliases: [rname]
+  shownicks:
+    usage: /<command>
+    description: Toggle showing nicknames in chat.
+  staffmsg:
+    usage: /<command> <message>
+    description: Send a message to the Staff channel.
+    aliases: [a]
+    permission: chat.channel
+  channel:
+    usage: /<command> <channel>
+    description: Change your chat channel.
+    aliases: [ch]
+    permission: chat.channel
+  ignore:
+    usage: /<command> <player>
+    description: Ignore a player.
+  message:
+    usage: /<command> <player> <message>
+    description: Message a player.
+    aliases: [msg, pm, m, w]
+  reply:
+    usage: /<command> <message>
+    description: Reply to your last PM.
+    aliases: [r]
+  tags:
+    usage: /<command> [tag]
+    description: Change your chat tag
+    aliases: [chattag]
+  socialspy:
+    usage: /<command>
+    description: See all private messages sent
+    aliases: [ss]
+    permission: chat.socialspy
+  color:
+    usage: /<command>
+    description: Open the ChatColor menu
+    aliases: [chatcolor]
+    permission: chat.color
+  trends:
+    usage: /<command> <trend>
+    description: Shows information on a trend
+    aliases: [trend, hashtag]
+  authenticateslack:
+    usage: /<command>
+    description: Authenticate that this is your user for slack
+    aliases: [slackauth, authslack]
+    permission: chat.slack.auth
+
+permissions:
+  chat.all:
+    default: op
+    description: Grants full access to the Chat plugin
+    children:
+      chat.channels.all: true
+      chat.color.all: true
+      chat.nickname.all: true
+      chat.immutable: true
+      chat.socialspy: true
+
+  chat.socialspy:
+    default: false
+    description: Allows you to use /socialspy
+
+  chat.immutable:
+    default: false
+    description: Allows you to bypass being ignored.
+
+  chat.channel.all:
+    default: false
+    description: Allows use of the staff channel
+    children:
+      chat.channel: true
+      chat.channel.operator: true
+  chat.channel:
+    default: false
+    description: Allows use of the staff channel
+  chat.channel.operator:
+    default: false
+    description: Allows use of the operator channel
+
+  chat.color.all:
+    default: false
+    description: Allows use of all color nodes
+    children:
+      chat.color: true
+      chat.color.bypass: true
+      chat.extras: true
+  chat.color:
+    default: false
+    description: Allows chatting in color
+  chat.color.bypass:
+    default: false
+    description: Allows bypassing banned colors
+  chat.extras:
+    default: false
+    description: Allows use of line break
+
+  chat.nickname.all:
+    default: false
+    description: Allows all nickname commands
+    children:
+      chat.nickname: true
+      chat.nickname.color: true
+      chat.nickname.color.bypass: true
+      chat.nickname.length.bypass: true
+      chat.nickname.swear: true
+  chat.nickname:
+    default: false
+    description: Allows setting your nickname
+  chat.nickname.color:
+    default: false
+    description: Allows using color in your nickname
+  chat.nickname.color.bypass:
+    default: false
+    description: Allows using banned color in your nickname
+  chat.nickname.length.bypass:
+    default: false
+    description: Allows bypassing the nickname length limit
+  chat.nickname.swear:
+    default: false
+    description: Allows swears in your nickname
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

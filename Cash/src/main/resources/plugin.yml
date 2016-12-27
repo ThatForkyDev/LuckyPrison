@@ -1,0 +1,78 @@
+ ######     ###     ######  ##     ##
+##    ##   ## ##   ##    ## ##     ##
+##        ##   ##  ##       ##     ##
+##       ##     ##  ######  #########
+##       #########       ## ##     ##
+##    ## ##     ## ##    ## ##     ##
+ ######  ##     ##  ######  ##     ##
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+commands:
+  balancetop:
+    usage: /<command> [page]
+    description: View the top balances.
+    aliases: [baltop]
+  balance:
+    usage: /<command> [player]
+    description: View your balance.
+    aliases: [bal, money]
+  pay:
+    usage: /<command> <player> [amount]
+    description: Send part of your balance to someone else.
+  payments:
+    usage: /<command> [player]
+    description: View your payment history.
+  tokens:
+    usage: /<command> [player]
+    description: View another player's tokens
+    aliases: [token, tok]
+  auction:
+    usage: /<command> info|start|queue <price> [amount]
+    description: Start an auction.
+    aliases: [auc]
+  cancel:
+    usage: /<command> [all]
+    description: Cancel your auctions from the queue.
+  bid:
+    usage: /<command> <price>
+    description: Bid on the current auction.
+  setbal:
+    usage: /<command> <player> <amount>
+    description: Set a player's balance
+    permission: cash.setbal
+
+permissions:
+  cash.all:
+    default: op
+    description: Grants full access to the Cash plugin
+    children:
+      cash.auctiondouble: true
+      cash.runlots: true
+      cash.overspend: true
+      cash.setbal: true
+  cash.overspend:
+    default: false
+    description: Allows overspending of money
+  cash.overspend:
+    default: false
+    description: Allows access to /setbal
+  cash.auctiondouble:
+    default: false
+    description: Allows starting auctions with twice the initial price
+  cash.runlots:
+    default: false
+    description: Allows running multiple auctions
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

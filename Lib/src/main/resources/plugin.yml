@@ -1,0 +1,55 @@
+##       #### ########
+##        ##  ##     ##
+##        ##  ##     ##
+##        ##  ########
+##        ##  ##     ##
+##        ##  ##     ##
+######## #### ########
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+load: STARTUP
+softdepend: [WorldEdit, PermissionsEx, OpenInv, EchoPet, SonarPet]
+
+commands:
+  module:
+    usage: /<command> list|count|info|enable|disable|reload|test
+    description: Module management command
+    aliases: [modules, mod, mods]
+  loadplugin:
+    usage: /<command> <plugin name>
+    description: Plugin loader command
+    permission: lib.loadplugin
+  forcegc:
+    usage: /<command>
+    description: Force a garbage collection
+    permission: lib.forcegc
+
+permissions:
+  lib.all:
+    default: op
+    description: Grants full access to the Lib plugin
+    children:
+      lib.moduleadmin: true
+      lib.signs: true
+      lib.loadplugin: true
+      lib.teleport.instant: true
+  lib.signs:
+    default: false
+  lib.loadplugin:
+    default: false
+  lib.moduleadmin:
+    default: false
+  lib.teleport.instant:
+    default: false
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

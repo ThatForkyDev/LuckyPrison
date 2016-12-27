@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:LuckyPrison/HarambeSquared.git
+	branch = master
+	commit = 389643a6c2186026cfc2bc4ea418cd35b6442f8c
+	parent = 42665a73005b27db8e91b0e59bd0cc25a10a746c
+	cmdver = 0.3.0

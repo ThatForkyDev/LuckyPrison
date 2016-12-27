@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:LuckyPrison/Chat.git
+	branch = master
+	commit = 4c3de7ab0ae5ac548985ffc3f21b94faa8806504
+	parent = c5a1b00cd98aa73cc6a6effdda48646afd8ca8ea
+	cmdver = 0.3.0

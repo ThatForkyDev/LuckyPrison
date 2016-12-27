@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:LuckyPrison/Lib.git
+	branch = master
+	commit = 4b7e45c114467d55c247a8676ad1ad57c621f547
+	parent = 5d0c9efb8d04f12ea98168e44ad7a6dcefde0299
+	cmdver = 0.3.0

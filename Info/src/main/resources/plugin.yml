@@ -1,0 +1,83 @@
+#### ##    ## ########  ####### 
+ ##  ###   ## ##       ##     ##
+ ##  ####  ## ##       ##     ##
+ ##  ## ## ## ######   ##     ##
+ ##  ##  #### ##       ##     ##
+ ##  ##   ### ##       ##     ##
+#### ##    ## ##        #######
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+commands:
+  website:
+    usage: /<command>
+    description: Get the website link
+    aliases: [web, forum, forums]
+  vote:
+    usage: /<command>
+    description: Get the vote link
+  store:
+    usage: /<command>
+    description: Get the store link
+    aliases: [donate]
+  teamspeak:
+    usage: /<command>
+    description: Get the TeamSpeak3 ip
+    aliases: [ts, ts3]
+  issues:
+    usage: /<command>
+    description: Get the issue tracker link
+    aliases: [bugs]
+  github:
+    usage: /<command>
+    description: Get the GitHub link
+    aliases: [git, java]
+  twitter:
+    usage: /<command>
+    description: Get the Twitter link
+    aliases: [tweet]
+  facebook:
+    usage: /<command>
+    description: Get the Facebook link
+    aliases: [fb]
+  tumblr:
+    usage: /<command>
+    description: Get the Tumblr link
+    aliases: [blog]
+  youtube:
+    usage: /<command>
+    description: Get the YouTube link
+    aliases: [yt, videos]
+  twitch:
+    usage: /<command>
+    description: Get the TwitchTV link
+    aliases: [stream]
+  skype:
+    usage: /<command>
+    description: Get the Skype name
+  apply:
+    usage: /<command>
+    description: Get the staff application
+    aliases: [app, staffapp]
+  ytrank:
+    usage: /<command>
+    description: Get the YT rank
+  chests:
+    usage: /<command>
+    description: Get information about chests
+  autosell:
+    usage: /<command>
+    description: Get information about autosell
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

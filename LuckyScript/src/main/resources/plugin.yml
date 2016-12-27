@@ -1,0 +1,28 @@
+##       ##    ## ##    ##
+##       ##   ##   ##  ##
+##       ##  ##     ####
+##       #####       ##
+##       ##  ##      ##
+##       ##   ##     ##
+######## ##    ##    ##
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+commands:
+  script:
+    usage: /<command> <script>
+    description: Execute a script
+    permission: script.execute
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

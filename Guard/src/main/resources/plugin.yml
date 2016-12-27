@@ -1,0 +1,46 @@
+ ######   ##     ##    ###    ########  ########
+##    ##  ##     ##   ## ##   ##     ## ##     ##
+##        ##     ##  ##   ##  ##     ## ##     ##
+##   #### ##     ## ##     ## ########  ##     ##
+##    ##  ##     ## ######### ##   ##   ##     ##
+##    ##  ##     ## ##     ## ##    ##  ##     ##
+ ######    #######  ##     ## ##     ## ########
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+commands:
+  guard:
+    usage: /<command> add|remove|flag|info
+    aliases: [gu, region]
+    permission: guard.use
+
+permissions:
+  guard.all:
+    default: op
+    description: Grants full access to the Guard plugin
+    children:
+      guard.use: true
+      guard.bypass: true
+      guard.list: true
+      guard.create: true
+  guard.create:
+    default: false
+  guard.list:
+    default: false
+  guard.use:
+    default: false
+  guard.bypass:
+    default: false
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

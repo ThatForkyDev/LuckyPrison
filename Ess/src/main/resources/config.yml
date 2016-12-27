@@ -1,0 +1,9 @@
+kits:
+  default:
+    cooldown: 0
+    items:
+    - slot.0 id.IRONBLOCK am.5
+tab:
+  header: '&7&m+*+&6&l LUCKY PRISON &7&m+*+'
+  footer: '&2Website: &ahttps://luckyprison.com'
+extraWorlds: []

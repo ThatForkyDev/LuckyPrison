@@ -1,0 +1,491 @@
+########  ######   ######
+##       ##    ## ##    ##
+##       ##       ##
+######    ######   ######
+##             ##       ##
+##       ##    ## ##    ##
+########  ######   ######
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+# Depends on prison for enchants. TODO: move to lib
+depend: [Lib]
+softdepend: [Prison]
+
+commands:
+  gamemode:
+    usage: /<command> <mode> [player]
+    description: Change your gamemode.
+    aliases: [gm]
+    permission: ess.gamemode
+  fly:
+    usage: /<command>
+    description: Toggle flight
+    permission: ess.fly
+  god:
+    usage: /<command> [player]
+    description: Toggle godmode.
+    permission: ess.godmode
+  vanish:
+    usage: /<command> [player]
+    description: Toggle vanish.
+    permission: ess.vanish
+    aliases: [v]
+  time:
+    usage: /<command> <number|day|night|midday|midnight|sunrise|sunset>
+    description: Change the time.
+    permission: ess.time
+  day:
+    usage: /<command>
+    description: Set the time to day.
+  night:
+    usage: /<command>
+    description: Set the time to night.
+  ptime:
+    usage: /<command> <number|day|night|midday|midnight|sunrise|sunset> <relative>
+    description: Change your local time.
+    permission: ess.playertime
+  pday:
+    usage: /<command>
+    description: Sets your local time to day.
+  pnight:
+    usage: /<command>
+    description: Sets your local time to night.
+  weather:
+    usage: /<command> <number|sun|rain>
+    description: Change the weather.
+    permission: ess.weather
+  pweather:
+    usage: /<command> <number|sun|rain>
+    description: Change the local weather.
+    permission: ess.playerweather
+  sun:
+    usage: /<command>
+    description: Set the weather to sunny.
+  rain:
+    usage: /<command>
+    description: Set the weather to stormy.
+    aliases: [storm]
+  psun:
+    usage: /<command>
+    description: Set the local weather to sunny.
+  prain:
+    usage: /<command>
+    description: Set the local weather to stormy.
+    aliases: [storm]
+  spawn:
+    usage: /<command>
+    description: Return to spawn.
+  setspawn:
+    usage: /<command> [--round]
+    description: Set the spawnpoint.
+    permission: ess.setspawn
+  shock:
+    usage: /<command> [player]
+    description: Very lightning, much Thor.
+    permission: ess.shock
+  top:
+    usage: /<command> <player>
+    description: Teleport to the top block.
+    permission: ess.teleport.top
+  teleport:
+    usage: /<command> <player>
+    description: Teleport to another player.
+    aliases: [tp]
+    permission: ess.teleport
+  teleporthere:
+    usage: /<command> <player>
+    description: Teleport to another player to you.
+    aliases: [tphere]
+    permission: ess.teleport.here
+  teleportpos:
+    usage: /<command> <player>
+    description: Teleport to a position.
+    aliases: [tppos]
+    permission: ess.teleport.pos
+  teleportask:
+    usage: /<command> <player>
+    description: Request to teleport to another user.
+    aliases: [tpask, tpa]
+  teleportaccept:
+    usage: /<command> [player]
+    description: Accept another user's teleport request.
+    aliases: [tpaccept, tpyes]
+  teleportqueue:
+    usage: /<command> [player]
+    description: View your teleport queue.
+    aliases: [tpque, tpcue]
+  spawnmob:
+    usage: /<command> <type> [number] [player]
+    description: Spawn a mob.
+    permission: ess.spawnmob
+  slay:
+    usage: /<command> <player>
+    description: Slay a player.
+    aliases: [die, kill, suicide]
+  say:
+    usage: /<command> <message>
+    description: Broadcast a message.
+    permission: ess.say
+  buycast:
+    usage: /<command> <player> [message]
+    description: Broadcast a purchase message.
+    permission: ess.say
+  broadcast:
+    usage: /<command> <message>
+    description: Broadcast a prefixed message.
+    permission: ess.say
+  hologram:
+    usage: /<command> [--round] <message>
+    description: Spawn a hologram.
+    permission: ess.hologram
+  feed:
+    usage: /<command> [player]
+    description: Feed a player.
+    permission: ess.feed
+  butcher:
+    usage: /<command> [entitytype [range]|range]
+    description: Butcher entities.
+    permission: ess.butcher
+    aliases: [killmobs]
+  clearinventory:
+    usage: /<command> [player]
+    description: Clear the inventory of a player.
+    aliases: [clearinv]
+  ping:
+    usage: /<command> [player]
+    description: Get the ping of a player.
+  give:
+    usage: /<command> <material> [amount]
+    description: Spawn an item.
+    aliases: [i]
+    permission: ess.give
+  exactgive:
+    usage: /<command> [player] <item...>
+    description: Spawn an exact item.
+    aliases: [ei, egive]
+    permission: ess.exactgive
+  speed:
+    usage: /<command> <speed>
+    description: Set your speed.
+    permission: ess.speed
+  world:
+    usage: /<command> <world>
+    description: Teleport to another world.
+    permission: ess.world
+  kit:
+    usage: /<command> [kit]
+    description: Spawn in your kit.
+  home:
+    usage: /<command> [name]
+    description: Teleport to your home.
+    aliases: [homes]
+  sethome:
+    usage: /<command> <name>
+    description: Create a home.
+  warp:
+    usage: /<command> [warp] [player]
+    description: Teleport to a warp.
+    aliases: [warps]
+  setwarp:
+    usage: /<command> <name> [warmup]
+    description: Create a warp.
+    permission: ess.setwarp
+  setmotd:
+    usage: /<command> [top] [-b] <bottom>
+    description: Change the server motd
+    permission: ess.setmotd
+  sign:
+    usage: /<command> <line> [text]
+    description: Change the line on a sign
+    permission: ess.sign
+  signcmd:
+    usage: /<command> <command>
+    description: Bind a sign command
+    permission: ess.sign.cmd
+  online:
+    usage: /<command>
+    description: View total online players
+    aliases: [o, list]
+  reboot:
+    usage: /<command>
+    description: Restart the server
+    permission: ess.reboot
+  serverstats:
+    usage: /<command>
+    description: View server performance info
+    permission: ess.serverstats
+  lagwatch:
+    usage: /<command>
+    description: Enable the lagwatch
+    permission: ess.lagwatch
+  forcegc:
+    usage: /<command>
+    description: Force garbage collection
+    permission: ess.forcegc
+  permissiondebug:
+    usage: /<command>
+    description: Toggle permission debugging
+  enchant:
+    usage: /<command> <enchantment>
+    description: Apply an enchantment to your current item
+    aliases: [ench]
+    permission: ess.give
+  delhome:
+    usage: /<command> <name>
+    description: Delete a home.
+  preset:
+    usage: /<command>
+    description: Reset your time and weather to the server's.
+#  enderchest:
+#    usage: /<command> <player>
+#    description: Open an enderchest.
+#    aliases: [echest]
+#    permission: ess.enderchest
+  delwarp:
+    usage: /<command> <name>
+    description: Delete a warp.
+    permission: ess.delwarp
+  fix:
+    usage: /<command> [hand|all]
+    description: Fix items in your inventory.
+    permission: ess.fix.hand
+    aliases: [repair]
+  unlimited:
+    usage: /<command>
+    description: Allows unlimited placement of some blocks
+    permission: ess.unlimited
+  fireball:
+    usage: /<command>
+    description: Shoots a fireball
+    permission: ess.fireball
+
+permissions:
+  ess.all:
+    default: op
+    description: Grants full access to the Ess plugin
+    children:
+      ess.delwarp: true
+      ess.setwarp: true
+      ess.world: true
+      ess.give: true
+      ess.exactgive: true
+      ess.butcher: true
+      ess.hologram: true
+      ess.say: true
+      ess.spawnmob: true
+      ess.setspawn: true
+      ess.setmotd: true
+      ess.sign.all: true
+      ess.sethome.multiple: true
+      ess.time.all: true
+      ess.weather.set: true
+      ess.speed.all: true
+      ess.shock.all: true
+      ess.ping.others: true
+      ess.slay.others: true
+      ess.fly.all: true
+      ess.gamemode.all: true
+      ess.warp.others: true
+      ess.clearinv.others: true
+      ess.feed.all: true
+      ess.teleport.all: true
+      ess.reboot: true
+      ess.draw: true
+      ess.fix.all: true
+      ess.unlimited: true
+      ess.fireball: true
+      ess.kit.others: true
+  ess.delwarp:
+    default: false
+  ess.setwarp:
+    default: false
+  ess.setspawn:
+    default: false
+  ess.setmotd:
+    default: false
+  ess.world:
+    default: false
+  ess.speed:
+    default: false
+  ess.give:
+    default: false
+  ess.exactgive:
+    default: false
+  ess.butcher:
+    default: false
+  ess.hologram:
+    default: false
+  ess.say:
+    default: false
+  ess.spawnmob:
+    default: false
+  ess.sethome.multiple:
+    default: false
+  ess.weather:
+    default: false
+  ess.weather.set:
+    default: false
+  ess.playerweather:
+    default: false
+  ess.playerweather.set:
+    default: false
+  ess.speed.others:
+    default: false
+  ess.shock.others:
+    default: false
+  ess.ping.others:
+    default: false
+  ess.slay.others:
+    default: false
+  ess.warp.others:
+    default: false
+  ess.clearinv.others:
+    default: false
+  ess.kit.others:
+    default: false
+  ess.reboot:
+    default: false
+  ess.draw:
+    default: false
+  ess.enderchest:
+    default: false
+  ess.fix.hand:
+    default: false
+  ess.unlimited:
+    default: false
+  ess.fireball:
+    default: false
+
+  ess.fix.all:
+    default: false
+    children:
+      ess.fix.hand: true
+
+  ess.teleport.all:
+    default: false
+    children:
+      ess.teleport: true
+      ess.teleport.here: true
+      ess.teleport.pos: true
+      ess.teleport.top: true
+  ess.teleport:
+    default: false
+  ess.teleport.here:
+    default: false
+  ess.teleport.pos:
+    default: false
+  ess.teleport.top:
+    default: false
+
+  ess.shock.all:
+    default: false
+    children:
+      ess.shock: true
+      ess.shock.others: true
+  ess.shock:
+    default: false
+  ess.shock.others:
+    default: false
+
+  ess.feed.all:
+    default: false
+    children:
+      ess.feed: true
+      ess.feed.others: true
+  ess.feed:
+    default: false
+  ess.feed.others:
+    default: false
+
+  ess.sign.all:
+    default: false
+    children:
+      ess.sign: true
+      ess.sign.cmd: true
+  ess.sign:
+    default: false
+  ess.sign.cmd:
+    default: false
+
+  ess.gamemode.all:
+    default: false
+    children:
+      ess.gamemode.self: true
+      ess.gamemode.others: true
+  ess.gamemode.self:
+    default: false
+    children:
+      ess.gamemode: true
+      ess.gamemode.logout: true
+  ess.gamemode:
+    default: false
+  ess.gamemode.others:
+    default: false
+  ess.gamemode.logout:
+    default: false
+
+  ess.fly.all:
+    default: false
+    children:
+      ess.fly: true
+      ess.fly.others: true
+  ess.fly:
+    default: false
+  ess.fly.others:
+    default: false
+
+  ess.godmode.all:
+    default: false
+    children:
+      ess.godmode: true
+      ess.godmode.others: true
+  ess.godmode:
+    default: false
+  ess.godmode.others:
+    default: false
+
+  ess.speed.all:
+    default: false
+    children:
+      ess.speed: true
+      ess.speed.others: true
+  ess.speed:
+    default: false
+  ess.speed.others:
+    default: false
+
+  ess.time.all:
+    default: false
+    children:
+      ess.time: true
+      ess.time.set: true
+  ess.time:
+    default: false
+  ess.time.set:
+    default: false
+
+  ess.playertime.all:
+    default: false
+    children:
+      ess.playertime: true
+      ess.playertime.set: true
+  ess.playertime:
+    default: false
+  ess.playertime.set:
+    default: false
+
+  ess.sign.color:
+    default: false
+
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

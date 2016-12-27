@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:LuckyPrison/XMap.git
+	branch = master
+	commit = 90210f549167e7a3d844f316d39f37497eac2451
+	parent = 33426a52d5d675ebf2a25a74883b562fc39fdb06
+	cmdver = 0.3.0

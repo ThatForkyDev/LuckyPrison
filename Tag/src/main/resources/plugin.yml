@@ -1,0 +1,54 @@
+########    ###     ######
+   ##      ## ##   ##    ##
+   ##     ##   ##  ##
+   ##    ##     ## ##   ####
+   ##    ######### ##    ##
+   ##    ##     ## ##    ##
+   ##    ##     ##  ######
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib]
+
+commands:
+  combattag:
+    usage: /<command>
+    aliases: [ct]
+    description: Check if you're currently tagged.
+  forcetag:
+    usage: /<command> <player> [duration]
+    description: Force-tag a player
+    permission: tag.force
+  untag:
+    usage: /<command> <player>
+    description: Untag a player
+    permission: tag.force
+
+permissions:
+  tag.all:
+    default: op
+    description: Provides all combattag commands
+    children:
+      tag.bypass: true
+      tag.force: true
+      tag.notify: true
+  tag.bypass:
+    default: false
+    description: Allows bypassing combattag
+  tag.force:
+    default: false
+    description: Allows forcing a combattag on a player
+  tag.notify:
+    default: false
+    description: Be notified when someone is slain by CombatTag
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com

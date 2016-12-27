@@ -1,0 +1,437 @@
+ ######   #######  ##    ## ########
+##    ## ##     ## ###   ##    ##
+##       ##     ## ####  ##    ##
+##       ##     ## ## ## ##    ##
+##       ##     ## ##  ####    ##
+##    ## ##     ## ##   ###    ##
+ ######   #######  ##    ##    ##
+
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: ${project.author}
+website: ${project.website}
+database: false
+description: ${project.description}
+depend: [Lib, Data]
+
+commands:
+  alert:
+    usage: /<command> [player] <message>
+    description: Send a title alert to players.
+    permission: control.alert
+  lockdown:
+    usage: /<command>
+    description: Lock the chat down.
+    permission: control.lockdown
+  spamfilter:
+    usage: /<command>
+    description: Toggle the spamfilter.
+    permission: control.lockdown
+  clearchat:
+    usage: /<command> [line]
+    description: Clears the chat.
+    aliases: [cc]
+    permission: control.clearchat
+  spam:
+    usage: /<command> <times> <message>
+    description: Spams a message.
+    permission: control.spam
+  sudo:
+    usage: /<command> <player> <message>
+    description: Sudo a player to chat or use a command.
+    permission: control.sudo
+  watcher:
+    usage: /<command> <delay>
+    description: Teleports you to random players every <delay>
+    permission: control.watcher
+  uuidof:
+    usage: /<command> [player]
+    description: Fetch a player's uuid
+    permission: control.uuidof
+  nameof:
+    usage: /<command> [player]
+    description: Fetch a player's name
+    permission: control.nameof
+  ipof:
+    usage: /<command> [player]
+    description: Fetch a player's ip
+    permission: control.ipof
+  exempt:
+    usage: /<command> <player>
+    description: Exempt a player
+    permission: control.exempt
+  inspect:
+    usage: /<command> <punishment>
+    description: Inspect a punishment
+    permission: control.inspect
+  recent:
+    usage: /<command> [return]
+    description: View recent punishments
+    permission: control.recent
+  seen:
+    usage: /<command> <player>
+    description: Check when a player was last online, and their IPs
+  seenip:
+    usage: /<command> <ip>
+    description: View information about an IP
+    permission: control.seen.ip
+  knownips:
+    usage: /<command> <player>
+    description: View the player's known IPs
+    permission: control.knownips
+  audit:
+    usage: /<command> <player>
+    description: Audit an administrator
+    permission: control.audit
+  disconnect:
+    usage: /<command> <player>
+    description: Disconnect a player
+    permission: control.disconnect
+  oslay:
+    usage: /<command> <player>
+    description: Mark a player for offline-slaying
+    permission: control.oslay
+  aa:
+    usage: /<command> [interact|damage]
+    description: Disable specific actions
+    permission: control.aa
+  snoop:
+    usage: /<command>
+    description: Toggle command snooper
+    permission: control.snoop
+    aliases: [snoopdogg]
+  violation:
+    usage: /<command> [player]
+    description: View a player's current violation total
+    permission: control.violation
+    aliases: [vl]
+  atall:
+    usage: /<command> <cmd>
+    description: Dispatch a command at every player on the server
+    permission: control.atall
+  date:
+    usage: /<command>
+    description: View the current date and time
+  uptime:
+    usage: /<command>
+    description: View the current uptime
+  kick:
+    usage: /<command> <player> [reason]
+    description: Kick a player
+    permission: control.kick
+  kickip:
+    usage: /<command> <ip> [reason]
+    description: Kick an IP address
+    permission: control.kick.ip
+  kickall:
+    usage: /<command> [reason]
+    description: Kick all players
+    permission: control.kickall
+  ban:
+    usage: /<command> <player> [duration] [reason]
+    description: Ban a player
+    permission: control.ban
+  banip:
+    usage: /<command> <ip> [duration] [reason]
+    description: Ban an IP address
+    permission: control.ban.ip
+  expire:
+    usage: /<command> <punishment>
+    description: Expire a punishment
+    permission: control.expire
+  unban:
+    usage: /<command> <player>
+    description: Pardon a player
+    permission: control.ban
+    aliases: [pardon]
+  unbanip:
+    usage: /<command> <ip>
+    description: Pardon an IP address
+    permission: control.ban.ip
+    aliases: [pardonip]
+  mute:
+    usage: /<command> <player> [duration] [reason]
+    description: Mute a player
+    permission: control.mute
+  muteip:
+    usage: /<command> <ip> [duration] [reason]
+    description: Mute an IP address
+    permission: control.mute.ip
+  unmute:
+    usage: /<command> <player>
+    description: Unmute a player
+    permission: control.mute
+  unmuteip:
+    usage: /<command> <ip>
+    description: Unmute an IP address
+    permission: control.mute.ip
+  cmute:
+    usage: /<command> <player> [duration] [reason]
+    description: Command-Mute a player
+    permission: control.cmute
+  cmuteip:
+    usage: /<command> <ip> [duration] [reason]
+    description: Command-Mute an IP address
+    permission: control.cmute.ip
+  uncmute:
+    usage: /<command> <player>
+    description: Uncommand-Mute a player
+    permission: control.cmute
+  uncmuteip:
+    usage: /<command> <ip>
+    description: Uncommand-Mute an IP address
+    permission: control.cmute.ip
+  respawn:
+    usage: /<command> <player>
+    description: Sends a respawn packet to the target player
+    permission: control.respawn
+  burn:
+    usage: /<command> <player> <duration>
+    description: Burn a player
+    permission: control.burn
+  cloneinv:
+    usage: /<command> <player>
+    description: Clone another player's inventory into your own
+    permission: control.cloneinv
+    aliases: [copyinv]
+  bloodhound:
+    usage: /<command> [--deep.#number] [--inst] <item...>
+    description: Hunt for an item
+    permission: control.bloodhound
+    aliases: [itemhunter, ih]
+  history:
+    usage: /<command> <punishment holder>
+    description: View the history of a punishment holder
+    permission: control.history
+  abuse:
+    usage: /<command> <player>
+    description: Abuse a player
+    permission: control.abuse
+    aliases: [slap]
+  delpet:
+    usage: /<command> <player>
+    description: Delete a player's pet
+    permission: control.delpet
+  logpos:
+    usage: /<command>
+    description: Logs all current player positions
+    permission: control.logpos
+  pingavg:
+    usage: /<command>
+    description: Shows the average ping of all online players
+    permission: control.pingavg
+  warn:
+    usage: /<command> <holder> <reason>
+    description: Warns the target
+    permission: control.warn
+    aliases: [wn]
+  warnings:
+    usage: /<command> <holder>
+    description: Views all warnings held by the target
+    permission: control.warn
+    aliases: [warns, ws]
+  clearwarnings:
+    usage: /<command> <holder>
+    description: Clears all warns held by the target
+    permission: control.warn
+    aliases: [clearwarns]
+  delentity:
+    usage: /<command>
+    description: Toggles entity deleter
+    permission: control.delentity
+  showops:
+    usage: /<command>
+    description: Shows a list of the server operators
+    permission: control.showops
+  spectate:
+    usage: /<command> [player]
+    description: Toggles spectator mode
+    permission: control.spectate
+    aliases: [spec]
+  helpop:
+    usage: /<command> <message>
+    description: Sends a message to online moderators
+    aliases: [ho]
+  openinv:
+    usage: /<command> <player>
+    description: Opens an inventory
+    permission: control.openinv
+    aliases: [invsee, oi]
+  openender:
+    usage: /<command> [player]
+    description: Opens an enderchest
+    permission: control.openender
+    aliases: [echest, enderchest, oe]
+  searchinv:
+    usage: /<command> <item> [amount]
+    description: Finds an itemstack
+    permission: control.searchinv
+
+permissions:
+  control.all:
+    default: op
+    description: Grants full access to the Control plugin
+    children:
+      control.alert: true
+      control.lockdown: true
+      control.clearchat: true
+      control.spam: true
+      control.sudo: true
+      control.watcher: true
+      control.uuidof: true
+      control.ipof: true
+      control.exempt: true
+      control.expire: true
+      control.audit: true
+      control.inspect: true
+      control.recent: true
+      control.disconnect: true
+      control.knownips: true
+      control.oslay: true
+      control.aa: true
+      control.snoop: true
+      control.violation: true
+      control.atall: true
+      control.bypass.all: true
+      control.kick.all: true
+      control.ban.all: true
+      control.mute.all: true
+      control.cmute.all: true
+      control.seen.all: true
+      control.respawn: true
+      control.burn: true
+      control.cloneinv: true
+      control.seeip: true
+      control.bloodhound: true
+      control.showops: true
+      control.spectate: true
+  control.seeip:
+    default: false
+  control.alert:
+    default: false
+  control.lockdown:
+    default: false
+  control.clearchat:
+    default: false
+  control.spam:
+    default: false
+  control.sudo:
+    default: false
+  control.watcher:
+    default: false
+  control.uuidof:
+    default: false
+  control.ipof:
+    default: false
+  control.exempt:
+    default: false
+  control.expire:
+    default: false
+  control.inspect:
+    default: false
+  control.recent:
+    default: false
+  control.audit:
+    default: false
+  control.disconnect:
+    default: false
+  control.oslay:
+    default: false
+  control.aa:
+    default: false
+  control.snoop:
+    default: false
+  control.violation:
+    default: false
+  control.atall:
+    default: false
+  control.knownips:
+    default: false
+  control.respawn:
+    default: false
+  control.burn:
+    default: false
+  control.cloneinv:
+    default: false
+  control.bloodhound:
+    default: false
+  control.showops:
+    default: false
+  control.spectate:
+    default: false
+
+  control.bypass.all:
+    default: false
+    children:
+      control.bypass.ip: true
+      control.bypass.chat: true
+      control.bypass.groupkick: true
+      control.bypass.watcher: true
+  control.bypass.ip:
+    default: false
+  control.bypass.chat:
+    default: false
+  control.bypass.groupkick:
+    default: false
+  control.bypass.watcher:
+    default: false
+
+  control.seen.all:
+    default: false
+    children:
+      control.seen.ip: true
+      control.seen.location: true
+  control.seen.ip:
+    default: false
+  control.seen.location:
+    default: false
+
+  control.kick.all:
+    default: false
+    children:
+      control.kick: true
+      control.kick.ip: true
+      control.kickall: true
+  control.kick:
+    default: false
+  control.kick.ip:
+    default: false
+  control.kickall:
+    default: false
+
+  control.ban.all:
+    default: false
+    children:
+      control.ban: true
+      control.ban.ip: true
+  control.ban:
+    default: false
+  control.ban.ip:
+    default: false
+
+  control.mute.all:
+    default: false
+    children:
+      control.mute: true
+      control.mute.ip: true
+  control.mute:
+    default: false
+  control.mute.ip:
+    default: false
+
+  control.cmute.all:
+    default: false
+    children:
+      control.cmute: true
+      control.cmute.ip: true
+  control.cmute:
+    default: false
+  control.cmute.ip:
+    default: false
+
+# WRITTEN BY ADAM "PACKET" EDWARDS
+# PERMISSION TO USE, DISTRIBUTE, OR
+# MODIFY MUST BE GRANTED DIRECTLY
+# FROM HIM. CONTACT: Skype:packetdev
+# OR EMAIL: packetdev@gmail.com
